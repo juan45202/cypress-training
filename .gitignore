@@ -11,6 +11,8 @@ cypress/reports/*
 cypress/screenshots/*
 cypress/videos/*
 cypress/integration/examples/*
+cypress/e2e/1-**
+cypress/e2e/2-**
 
 ### Node ###
 # Logs
