@@ -1,5 +1,5 @@
 describe("Buy a t-shirt", () => {
-  it("Visiting pag", () => {
+  it("Then the t-shirt should be bought", () => {
     cy.visit("http://automationpractice.com/");
     cy.get("#block_top_menu > ul > li:nth-child(3) > a").click();
     cy.get("#center_column a.button.ajax_add_to_cart_button.btn.btn-default").click();
