@@ -2,21 +2,17 @@ class LoginPage {
     
     private campEmail: string;
     private campPassword: string
-    private userEmail: string;
-    private userPassword: string
     private submitLogin: string
 
     constructor() {
         this.campEmail = "#email";
         this.campPassword = "#passwd";
-        this.userEmail = "aperdomobo@gmail.com";
-        this.userPassword = "WorkshopProtractor";
         this.submitLogin = "#SubmitLogin > span";
     }
 
-    public completeForm(): void {
-        cy.get(this.campEmail).type(this.userEmail);
-        cy.get(this.campPassword).type(this.userPassword);
+    public login(userEmail : string, userPassword : string): void {
+        cy.get(this.campEmail).type(userEmail);
+        cy.get(this.campPassword).type(userPassword);
     }
 
     public signIn(): void {

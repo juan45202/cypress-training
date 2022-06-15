@@ -8,7 +8,7 @@ class ShippingStepPage {
         this.proceed = ".cart_navigation > .button > span"
     }
 
-    public aceptTerms(): void {
+    public acceptTerms(): void {
         cy.get(this.terms).click()
     }
 

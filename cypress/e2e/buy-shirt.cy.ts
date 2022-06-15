@@ -23,14 +23,14 @@ describe("Buy a t-shirt", () => {
     shoppingCartPage.goProceedToCheckout();
 
     // Login user
-    loginPage.completeForm();
+    loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor");
     loginPage.signIn();
 
     // Address
     addressStepPage.proceedToCheckout();
 
     // Shipping
-    shippingStepPage.aceptTerms();
+    shippingStepPage.acceptTerms();
     shippingStepPage.proceedToCheckout();
 
     // Payment
