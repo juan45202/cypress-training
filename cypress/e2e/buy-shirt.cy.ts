@@ -36,6 +36,8 @@ describe("Buy a t-shirt", () => {
     // Payment
     paymentStepPage.paymentMethod();
     paymentStepPage.confirmMethod();
-    paymentStepPage.checkResultText();
+
+    // Assert
+    paymentStepPage.getOrderStatus().should("have.text", "Your order on My Store is complete.");
   });
 });

@@ -1,15 +1,13 @@
 class PaymentStepPage {
-    
+
     private bankWire: string;
     private proceed: string;
     private elementToCheck: string;
-    private textToCheck: string;
 
     constructor() {
         this.bankWire = ".bankwire";
         this.proceed = "#cart_navigation > .button > span";
-        this.elementToCheck = ".cheque-indent > .dark";
-        this.textToCheck = "Your order on My Store is complete.";
+        this.elementToCheck = ".cheque-indent > .dark";        
     }
 
     public paymentMethod(): void {
@@ -20,8 +18,8 @@ class PaymentStepPage {
         cy.get(this.proceed).click()
     }
 
-    public checkResultText(): void {
-        cy.get(this.elementToCheck).should("have.text", this.textToCheck);
+    public getOrderStatus() {
+        return cy.get(this.elementToCheck);
     }
 }
 
