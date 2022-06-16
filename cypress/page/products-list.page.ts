@@ -4,7 +4,7 @@ class ProductsListPage {
     private proceedToCheckout: string
 
     constructor() {
-        this.addCart = "#center_column a.button.ajax_add_to_cart_button.btn.btn-default";
+        this.addCart = ".ajax_add_to_cart_button > span";
         this.proceedToCheckout = ".button-container > .button-medium > span"
     }
 

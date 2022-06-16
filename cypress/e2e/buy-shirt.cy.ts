@@ -1,5 +1,5 @@
 import {MenuContentPage, AddressStepPage, LoginPage, PaymentStepPage,
-  ProductsListPage, ShippingStepPage, ShoppingCartPage} from "../page/index";
+  ProductsListPage, ShippingStepPage, ShoppingCartPage, GeneralStepPage} from "../page/index";
 
 const menuContentPage = new MenuContentPage();
 const addressStepPage = new AddressStepPage();
@@ -8,6 +8,7 @@ const paymentStepPage = new PaymentStepPage();
 const productsListPage = new ProductsListPage();
 const shippingStepPage = new ShippingStepPage();
 const shoppingCartPage = new ShoppingCartPage();
+const generalStepPage = new GeneralStepPage();
 
 describe("Buy a t-shirt", () => {
   it("Then the t-shirt should be bought", () => {
@@ -20,22 +21,22 @@ describe("Buy a t-shirt", () => {
     productsListPage.goToCheckout();
 
     // Shopping cart
-    shoppingCartPage.goProceedToCheckout();
+    generalStepPage.proceedToCheckout();
 
     // Login user
     loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor");
     loginPage.signIn();
 
     // Address
-    addressStepPage.proceedToCheckout();
+    generalStepPage.proceedToCheckout();
 
     // Shipping
     shippingStepPage.acceptTerms();
-    shippingStepPage.proceedToCheckout();
+    generalStepPage.proceedToCheckout();
 
     // Payment
     paymentStepPage.paymentMethod();
-    paymentStepPage.confirmMethod();
+    generalStepPage.proceedToCheckout();
 
     // Assert
     paymentStepPage.getOrderStatus().should("have.text", "Your order on My Store is complete.");

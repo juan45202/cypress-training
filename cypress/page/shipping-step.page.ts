@@ -4,7 +4,7 @@ class ShippingStepPage {
     private proceed: string
 
     constructor() {
-        this.terms = "#cgv";
+        this.terms = ".order_carrier_content #cgv";
         this.proceed = ".cart_navigation > .button > span"
     }
 

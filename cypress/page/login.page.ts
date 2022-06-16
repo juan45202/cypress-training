@@ -7,7 +7,7 @@ class LoginPage {
     constructor() {
         this.campEmail = "#email";
         this.campPassword = "#passwd";
-        this.submitLogin = "#SubmitLogin > span";
+        this.submitLogin = "#login_form #SubmitLogin > span";
     }
 
     public login(userEmail : string, userPassword : string): void {
