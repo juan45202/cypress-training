@@ -7,7 +7,7 @@ class PaymentStepPage {
     constructor() {
         this.bankWire = ".bankwire";
         this.proceed = "#cart_navigation > .button > span";
-        this.elementToCheck = ".cheque-indent > .dark";        
+        this.elementToCheck = ".cheque-indent";        
     }
 
     public paymentMethod(): void {
