@@ -21,7 +21,7 @@ describe("Buy a t-shirt", () => {
     productsListPage.goToCheckout();
 
     // Shopping cart
-    generalStepPage.proceedToCheckout();
+    generalStepPage.proceedToCheckout2();
 
     // Login user
     loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor");
@@ -39,6 +39,6 @@ describe("Buy a t-shirt", () => {
     generalStepPage.proceedToCheckout();
 
     // Assert
-    paymentStepPage.getOrderStatus().should("have.text", "Your order on My Store is complete.");
+    paymentStepPage.getOrderStatus().contains("Your order on My Store is complete.");
   });
 });
