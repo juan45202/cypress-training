@@ -1,13 +1,11 @@
-import {MenuContentPage, AddressStepPage, LoginPage, PaymentStepPage,
-  ProductsListPage, ShippingStepPage, ShoppingCartPage, GeneralStepPage} from "../page/index";
+import {MenuContentPage, LoginPage, PaymentStepPage,
+  ProductsListPage, ShippingStepPage, GeneralStepPage} from "../page/index";
 
 const menuContentPage = new MenuContentPage();
-const addressStepPage = new AddressStepPage();
 const loginPage = new LoginPage();
 const paymentStepPage = new PaymentStepPage();
 const productsListPage = new ProductsListPage();
 const shippingStepPage = new ShippingStepPage();
-const shoppingCartPage = new ShoppingCartPage();
 const generalStepPage = new GeneralStepPage();
 
 describe("Buy a t-shirt", () => {
