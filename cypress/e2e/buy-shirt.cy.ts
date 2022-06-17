@@ -1,14 +1,23 @@
 import {MenuContentPage, LoginPage, PaymentStepPage,
   ProductsListPage, ShippingStepPage, GeneralStepPage} from "../page/index";
 
-const menuContentPage = new MenuContentPage();
-const loginPage = new LoginPage();
-const paymentStepPage = new PaymentStepPage();
-const productsListPage = new ProductsListPage();
-const shippingStepPage = new ShippingStepPage();
-const generalStepPage = new GeneralStepPage();
-
 describe("Buy a t-shirt", () => {
+  let menuContentPage: MenuContentPage;
+  let loginPage: LoginPage;
+  let paymentStepPage: PaymentStepPage;
+  let productsListPage: ProductsListPage;
+  let shippingStepPage: ShippingStepPage;
+  let generalStepPage: GeneralStepPage;
+
+  beforeEach(() => {
+    menuContentPage = new MenuContentPage();
+    loginPage = new LoginPage();
+    paymentStepPage = new PaymentStepPage();
+    productsListPage = new ProductsListPage();
+    shippingStepPage = new ShippingStepPage();
+    generalStepPage = new GeneralStepPage();
+  });
+
   it("Then the t-shirt should be bought", () => {
     // Arrange
     const email : string = "aperdomobo@gmail.com";
