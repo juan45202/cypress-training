@@ -1,42 +1,48 @@
 import {MenuContentPage, LoginPage, PaymentStepPage,
   ProductsListPage, ShippingStepPage, GeneralStepPage} from "../page/index";
 
-const menuContentPage = new MenuContentPage();
-const loginPage = new LoginPage();
-const paymentStepPage = new PaymentStepPage();
-const productsListPage = new ProductsListPage();
-const shippingStepPage = new ShippingStepPage();
-const generalStepPage = new GeneralStepPage();
-
 describe("Buy a t-shirt", () => {
+  let menuContentPage: MenuContentPage;
+  let loginPage: LoginPage;
+  let paymentStepPage: PaymentStepPage;
+  let productsListPage: ProductsListPage;
+  let shippingStepPage: ShippingStepPage;
+  let generalStepPage: GeneralStepPage;
+
+  beforeEach(() => {
+    menuContentPage = new MenuContentPage();
+    loginPage = new LoginPage();
+    paymentStepPage = new PaymentStepPage();
+    productsListPage = new ProductsListPage();
+    shippingStepPage = new ShippingStepPage();
+    generalStepPage = new GeneralStepPage();
+  });
+
   it("Then the t-shirt should be bought", () => {
-    // Visiting T-Shirt page
+    // Arrange
+    const email : string = "aperdomobo@gmail.com";
+    const password : string = "WorkshopProtractor";
+    const expectedMessage : string = "Your order on My Store is complete.";
     menuContentPage.visitMenuContentPage();
     menuContentPage.goToTShirtMenu();
 
-    // products list
+    // Action
     productsListPage.addToCart();
     productsListPage.goToCheckout();
-
-    // Shopping cart
     generalStepPage.proceedToCheckout2();
 
-    // Login user
-    loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor");
+    loginPage.login(email, password);
     loginPage.signIn();
 
-    // Address
     generalStepPage.proceedToCheckout();
-
-    // Shipping
     shippingStepPage.acceptTerms();
-    generalStepPage.proceedToCheckout();
 
-    // Payment
+    generalStepPage.proceedToCheckout();
     paymentStepPage.paymentMethod();
+
     generalStepPage.proceedToCheckout();
 
     // Assert
-    paymentStepPage.getOrderStatus().contains("Your order on My Store is complete.");
+    paymentStepPage.getOrderStatus().contains(expectedMessage);
   });
 });
