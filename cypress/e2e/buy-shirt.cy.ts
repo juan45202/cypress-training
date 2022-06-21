@@ -24,11 +24,10 @@ describe("Buy a t-shirt", () => {
     const password : string = "WorkshopProtractor";
     const expectedMessage : string = "Your order on My Store is complete.";
     menuContentPage.visitMenuContentPage();
-    menuContentPage.goToTShirtMenu()
-    
+    menuContentPage.goToTShirtMenu();
 
     // Action
-    productsListPage.addToCart("Faded Short Sleeve T-shirts")
+    productsListPage.addToCart("Faded Short Sleeve T-shirts");
     productsListPage.goToCheckout();
     generalStepPage.proceedToCheckout2();
 
@@ -43,7 +42,7 @@ describe("Buy a t-shirt", () => {
 
     generalStepPage.proceedToCheckout();
 
-    // // Assert
+    // Assert
     paymentStepPage.getOrderStatus().contains(expectedMessage);
   });
 });
