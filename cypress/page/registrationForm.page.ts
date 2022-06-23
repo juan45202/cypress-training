@@ -4,6 +4,7 @@ type personalInformation = {
     email: string
     gender: string
     mobileNumber: string
+    dateOfBirth: string
     hobbies: string[]
     currentAddress: string
     state: string
@@ -15,7 +16,8 @@ class RestrationFormPage {
     private lastName: string;
     private email: string;
     private mobileNumber: string;
-    private currentAdress: string
+    private dateOfBirth: string;
+    private currentAdress: string;
     private state: string
     private city: string
 
@@ -25,6 +27,7 @@ class RestrationFormPage {
         this.lastName = "#lastName";
         this.email = "#userEmail";
         this.mobileNumber = "#userNumber";
+        this.dateOfBirth = "#dateOfBirthInput";
         this.currentAdress = "#currentAddress";
         this.state = "#react-select-3-input";
         this.city = "#react-select-4-input";
@@ -40,6 +43,7 @@ class RestrationFormPage {
         cy.get(this.email).type(userData.email);
         cy.contains(userData.gender).click()
         cy.get(this.mobileNumber).type(userData.mobileNumber);
+        cy.get(this.dateOfBirth).type(`{selectall}${userData.dateOfBirth}{enter}`);
         this.setHobbies(userData.hobbies);
         cy.get(this.currentAdress).type(userData.currentAddress);
         cy.get(this.state).focus().type(`${userData.state}{enter}`);

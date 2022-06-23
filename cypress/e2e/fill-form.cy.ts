@@ -15,6 +15,7 @@ describe("Fill the Student Registration Form", () => {
       email: "hibarras@email.com",
       gender: "Male",
       mobileNumber: "3656589156",
+      dateOfBirth: "12 May,2021",
       hobbies: ["Music", "Reading"],
       currentAddress: "Av siempreViva # 123",
       state: "Uttar Pradesh",
