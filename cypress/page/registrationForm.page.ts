@@ -58,11 +58,16 @@ class RestrationFormPage {
     }
 
     public checkForm(userData : personalInformation): void {
-        Object.entries(userData).forEach((user) => {
-            user[0] === "hobbies" ? userData.hobbies.join(", ")  : cy.get('.modal').contains(user[1].toString())
-        });
+        cy.get('.modal').contains(userData.name);
+        cy.get('.modal').contains(userData.lastName);
+        cy.get('.modal').contains(userData.email);
+        cy.get('.modal').contains(userData.gender);
+        cy.get('.modal').contains(userData.dateOfBirth);
+        cy.get('.modal').contains(userData.currentAddress);
+        cy.get('.modal').contains(userData.state);
+        cy.get('.modal').contains(userData.city);
     }
-
+    
 }
 
 export { RestrationFormPage }
