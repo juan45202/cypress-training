@@ -16,6 +16,6 @@ describe("Test to upload and download a file", () => {
     uploadPage.uploadFile(fileName);
 
     // Assert
-    uploadPage.getTitle(fileName);
+    uploadPage.verifyFileName(fileName);
   });
 });

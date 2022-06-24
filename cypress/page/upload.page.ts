@@ -17,7 +17,7 @@ class UploadPage {
         cy.get(this.btnUpload).attachFile(fileName);
     }
 
-    public getTitle(filename: string): void {
+    public verifyFileName(filename: string): void {
         cy.get(this.titleSelector).contains(filename);
     }
 }
