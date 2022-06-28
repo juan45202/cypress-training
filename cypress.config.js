@@ -4,11 +4,12 @@ module.exports = defineConfig({
   e2e: {
     "video": false,
     "screenshotOnRunFailure": false,
-    "defaultCommandTimeout": 40000,
-    "responseTimeout": 40000,
+    "defaultCommandTimeout": 60000,
+    "responseTimeout": 60000,
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    "retries": 2,
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "reporterEnabled": "mochawesome",
