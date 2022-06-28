@@ -6,13 +6,14 @@ class IframePage {
 
     constructor() {
         this.ifrmaPageURL = "https://www.w3schools.com/html/html_iframe.asp";
-        this.iframeSelector = "[style=\"width:100%;height:350px;overflow:hidden;\"] > iframe";
+        this.iframeSelector = "[title=\"W3Schools HTML Tutorial\"]";
         this.titleText = "HTML Tutorial";
         this.cssSelector = "[title=\"CSS Tutorial\"]";
     }
 
     public visitIframePage(): void {
         cy.visit(this.ifrmaPageURL)
+        cy.wait(10000)
     }
 
     public getFrameTitle(): void {
